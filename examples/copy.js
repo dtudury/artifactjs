@@ -28,6 +28,10 @@ Q()
 
 
 
-var dm = new artifact.dependencyMap('copy.js', '../package.json');
+var dm;
 
+dm = new artifact.dependencyMap('copy.js', '../package.json');
+dm.isStale().then(log);
+
+dm = new artifact.dependencyMap('../package.json', 'copy.js');
 dm.isStale().then(log);
